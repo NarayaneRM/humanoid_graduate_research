@@ -1,0 +1,8 @@
+Objetivo macro:
+
+Construir um framework de controle e locomoção para humanoides em microgravidade, capaz de executar movimento corporal, navegação orbital e manipulação.
+
+MILESTONE 1 — Modelo físico correto (Fundação)
+MILESTONE 2 — Controle whole-body orbital
+MILESTONE 3 — Locomoção orbital Push–Flight–Contact
+MILESTONE 4 — Manipulação orbital funcional
