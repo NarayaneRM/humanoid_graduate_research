@@ -3,7 +3,7 @@ import mujoco.viewer
 import numpy as np
 import time
 
-MODEL_PATH = "T1/T1_locomotion.xml"
+MODEL_PATH = "resources/scene.xml"
 
 # =========================
 # LOAD MODEL

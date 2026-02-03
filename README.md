@@ -1,5 +1,9 @@
 # humanoid_graduate_research
 
+This research focuses on developing control strategies that enable humanoid robots to maintain balance and stability while carrying objects. 
+
+![Screenshot of the simulation scene](resources/sim_scene.png)
+
 ## Credits
 
 This project uses the T1 humanoid MuJoCo model adapted from the  

@@ -1,0 +1,4 @@
+<mujoco>
+    <include file="T1_locomotion.xml"/>
+    <include file="box.xml"/>
+</mujoco>
