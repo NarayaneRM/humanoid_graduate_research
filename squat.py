@@ -42,7 +42,7 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         phase = (t % step_time) / step_time
 
         # ==================================================
-        # LEG SWITCH
+        # LEG SWITCH 
         # Switch only when the cycle restarts
         # ==================================================
         if phase < prev_phase:
@@ -53,37 +53,16 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         dof_targets[:] = 0.0
 
         # ==================================================
-        # COM SHIFT (stance leg)
-        # ==================================================
-
-        # Smooth curve during the step
-        sway_curve = np.sin(np.pi * phase)
-
-        # Direction depends on support leg
-        if left_support:
-            sway = -sway_amp * sway_curve      # COM to the left
-        else:
-            sway = sway_amp * sway_curve      # COM to the right
-
-        # Apply to both hips
-        dof_targets[1] = -sway   # Left hip roll
-        dof_targets[7] = -sway   # Right hip roll
-
-        # ==================================================
         # SWING LEG
         # ==================================================
         knee = step_height * np.sin(np.pi * phase)
 
-        if left_support:
-            # Lift RIGHT leg
-            dof_targets[6] = -0.5*knee   # Right hip pitch
-            dof_targets[9] = knee        # Right knee
-            dof_targets[10] = -0.5*knee  # Right ankle
-        else:
-            # Lift LEFT leg
-            dof_targets[0] = -0.5*knee   # Left hip pitch
-            dof_targets[3] = knee        # Left knee
-            dof_targets[4] = -0.5*knee   # Left ankle
+        dof_targets[6] = -0.5*knee   # Right hip pitch
+        dof_targets[9] = knee        # Right knee
+        dof_targets[10] = -0.5*knee  # Right ankle
+        dof_targets[0] = -0.5*knee   # Left hip pitch
+        dof_targets[3] = knee        # Left knee
+        dof_targets[4] = -0.5*knee   # Left ankle
 
         # ==================================================
         # PD CONTROL
