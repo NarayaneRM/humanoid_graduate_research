@@ -1,10 +1,15 @@
 <mujoco>
     <worldbody>
-        <body name="box" pos="0.45 0 0.10">
+        <body name="box" pos="0.45 0 0.20">
+            <freejoint name="box_free"/>
             <geom
                 type="box"
                 size="0.15 0.15 0.2"
-                density="500"
+                density="10"
+                condim="6"
+                friction="3.5 0.2 0.08"
+                solref="0.004 1"
+                solimp="0.95 0.995 0.001"
                 rgba="0.8 0.3 0.3 1"/>
         </body>
     </worldbody>
